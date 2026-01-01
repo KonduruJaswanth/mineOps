@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- Database connection -->
+        <property name="hibernate.connection.driver_class">
+            com.mysql.cj.jdbc.Driver
+        </property>
+
+        <!-- ✅ Database name changed to Mine -->
+        <property name="hibernate.connection.url">
+            jdbc:mysql://localhost:3306/Mine
+        </property>
+
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">1234@boppana</property>
+
+        <!-- Hibernate properties -->
+        <property name="hibernate.dialect">
+            org.hibernate.dialect.MySQLDialect
+        </property>
+
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Entity mappings -->
+        <mapping class="com.mining.entity.MineSite"/>
+        <mapping class="com.mining.entity.Equipment"/>
+        <mapping class="com.mining.entity.Worker"/>
+        <mapping class="com.mining.entity.ShiftLog"/>
+        <mapping class="com.mining.entity.ProductionLog"/>
+        <mapping class="com.mining.entity.EquipmentUsage"/>
+        <mapping class="com.mining.entity.SafetyIncident"/>
+
+    </session-factory>
+</hibernate-configuration>
